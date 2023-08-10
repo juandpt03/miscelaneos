@@ -1,0 +1,24 @@
+name: miscelaneos
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.3.6
+  go_router: ^10.0.0
+  google_fonts: ^5.1.0
+  permission_handler: ^10.4.3
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  riverpod_lint: ^2.0.0
+
+flutter:
+  uses-material-design: true
