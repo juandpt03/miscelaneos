@@ -33,12 +33,38 @@ class PermissionsNotifier extends StateNotifier<PermissionsState> {
     );
   }
 
+  void openSettingsScreen() {
+    openAppSettings();
+  }
+
+  void _checkPermissionsState(PermissionStatus status) {
+    if (status == PermissionStatus.permanentlyDenied) {
+      openSettingsScreen();
+    }
+  }
+
   requestCameraAccess() async {
     final status = await Permission.camera.request();
     state = state.copyWith(camera: status);
-    if (status == PermissionStatus.permanentlyDenied) {
-      openAppSettings();
-    }
+    _checkPermissionsState(status);
+  }
+
+  requestGalleryAccess() async {
+    final status = await Permission.photos.request();
+    state = state.copyWith(photoLibrary: status);
+    _checkPermissionsState(status);
+  }
+
+  requestSensorsAccess() async {
+    final status = await Permission.sensors.request();
+    state = state.copyWith(sensors: status);
+    _checkPermissionsState(status);
+  }
+
+  requestLocationAccess() async {
+    final status = await Permission.location.request();
+    state = state.copyWith(location: status);
+    _checkPermissionsState(status);
   }
 }
 
