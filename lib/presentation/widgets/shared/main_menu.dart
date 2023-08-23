@@ -39,6 +39,11 @@ final menuItems = <MenuItem>[
     icon: Icons.explore,
     route: '/compas',
   ),
+  MenuItem(
+    title: 'Pokemons',
+    icon: Icons.catching_pokemon,
+    route: '/pokemons',
+  )
 ];
 
 class MainMenu extends StatelessWidget {

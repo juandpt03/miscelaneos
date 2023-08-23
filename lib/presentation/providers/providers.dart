@@ -4,3 +4,4 @@ export 'sensors/gyroscope_provider.dart';
 export 'sensors/accelerometer_providers.dart';
 export 'sensors/magnetometer_provider.dart';
 export 'compass/compas_provider.dart';
+export 'pokemons/pokemon_provider.dart';
